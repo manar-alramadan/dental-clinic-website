@@ -11,8 +11,13 @@
             {{-- Logo --}}
             <a href="/" class="flex items-center gap-3">
 
-                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-lg">
-                    <span class="text-2xl font-black text-cyan-600">R</span>
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg">
+                    <span class="">
+                        <img  src="{{ asset('images/teethlogo3.jpg') }}"
+                              alt="د. راما محمد الرمضان"
+                                class="rounded-full  h-10 w-10 object-cover"    >
+
+                        </span>
                 </div>
 
                 <div class="leading-tight">
