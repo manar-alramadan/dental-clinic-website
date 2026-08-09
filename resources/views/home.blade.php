@@ -6,7 +6,7 @@
     {{-- ================= NAVBAR ================= --}}
     <header class="absolute inset-x-0 top-0 z-50">
 
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <nav class="  fixed top-0 inset-x-0 z-50    bg-white/2 backdrop-blur-md  border-slate-200 shadow-sm transition-all mx-auto flex  items-center justify-between px-6 py-6">
 
             {{-- Logo --}}
             <a href="/" class="flex items-center gap-3">
@@ -244,248 +244,317 @@
     </section>
 
 
+{{-- ================= SERVICES ================= --}}
+<section
+    id="services"
+    class="relative overflow-hidden bg-slate-900 px-6 py-24"
+>
 
-    {{-- ================= SERVICES ================= --}}
-    <section
-        id="services"
-        class="bg-slate-50 px-6 py-24"
-    >
+    {{-- Background Glow --}}
+    <div class="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl"></div>
 
-        <div class="mx-auto max-w-7xl">
+    <div class="pointer-events-none absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"></div>
 
 
-            {{-- Section Header --}}
-            <div class="mx-auto max-w-2xl text-center">
+    <div class="relative mx-auto max-w-7xl">
 
-                <span class="font-bold text-cyan-600">
-                    خدماتنا
-                </span>
 
-                <h2 class="mt-3 text-4xl font-black text-slate-900 md:text-5xl">
-                    كل ما تحتاجه ابتسامتك
-                </h2>
+        {{-- Section Header --}}
+        <div class="mx-auto max-w-3xl text-center">
 
-                <p class="mt-5 text-lg leading-8 text-slate-600">
-                    نقدم مجموعة متكاملة من خدمات طب وتجميل الأسنان
-                    بأحدث التقنيات وبعناية تناسب احتياجاتك.
+                    <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-bold text-cyan-300">
+                        خدماتنا
+                    </span>
+
+
+            <h2 class="mt-3 text-4xl font-black text-white md:text-5xl">
+                عناية متكاملة
+                <span class="text-cyan-400"> ابتسامتك</span>
+            </h2>
+
+            <p class="mt-5 text-lg leading-8 text-slate-300">
+                نقدم مجموعة متكاملة من خدمات طب وتجميل الأسنان
+                بأحدث التقنيات وبعناية تناسب احتياجاتك.
+            </p>
+
+        </div>
+
+
+
+        {{-- Services Grid --}}
+        <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+
+            {{-- Cleaning --}}
+            <div
+                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            >
+
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                >
+
+                                     <span class="">
+                                         <img  src="{{ asset('images/teethlogo.jpg') }}"
+                                               alt="د. راما محمد الرمضان"
+                                                 class="rounded-full  h-15 w-15 object-cover"    >
+
+                                         </span>
+                </div>
+
+                <h3 class="mt-6 text-xl font-black text-white">
+                    تنظيف الأسنان
+                </h3>
+
+                <p class="mt-3 leading-7 text-slate-400">
+                    تنظيف احترافي يساعد على إزالة التصبغات
+                    والبلاك والحفاظ على صحة الأسنان واللثة.
                 </p>
 
             </div>
 
 
 
-            {{-- Services Grid --}}
-            <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {{-- Whitening --}}
+            <div
+                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            >
 
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                >
 
-                {{-- Cleaning --}}
-                <div class="group rounded-3xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+                                     <span class="">
+                                         <img  src="{{ asset('images/teeeth.jpg') }}"
+                                               alt="د. راما محمد الرمضان"
+                                                 class="rounded-full  h-15 w-15 object-cover"    >
 
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-3xl transition group-hover:bg-cyan-500">
-                        🦷
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black text-slate-900">
-                        تنظيف الأسنان
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-slate-600">
-                        تنظيف احترافي يساعد على إزالة التصبغات
-                        والبلاك والحفاظ على صحة الأسنان واللثة.
-                    </p>
-
+                                         </span>
                 </div>
 
+                <h3 class="mt-6 text-xl font-black text-white">
+                    تبييض الأسنان
+                </h3>
 
-
-                {{-- Whitening --}}
-                <div class="group rounded-3xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-3xl transition group-hover:bg-cyan-500">
-                        ✨
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black text-slate-900">
-                        تبييض الأسنان
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-slate-600">
-                        ابتسامة أكثر إشراقًا من خلال تقنيات
-                        تبييض الأسنان المناسبة لحالتك.
-                    </p>
-
-                </div>
-
-
-
-                {{-- Hollywood Smile --}}
-                <div class="group rounded-3xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-3xl transition group-hover:bg-cyan-500">
-                        😁
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black text-slate-900">
-                        Hollywood Smile
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-slate-600">
-                        تصميم ابتسامة متناسقة وطبيعية تناسب
-                        ملامح الوجه وشكل الأسنان.
-                    </p>
-
-                </div>
-
-
-
-                {{-- Root Canal --}}
-                <div class="group rounded-3xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-3xl transition group-hover:bg-cyan-500">
-                        🩺
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black text-slate-900">
-                        علاج العصب
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-slate-600">
-                        علاج الأسنان المتضررة والحفاظ عليها
-                        باستخدام تقنيات علاجية حديثة.
-                    </p>
-
-                </div>
-
-
-
-                {{-- Cosmetic Fillings --}}
-                <div class="group rounded-3xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-3xl transition group-hover:bg-cyan-500">
-                        💎
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black text-slate-900">
-                        الحشوات التجميلية
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-slate-600">
-                        حشوات بلون قريب من لون الأسنان
-                        لاستعادة الشكل والوظيفة بطريقة طبيعية.
-                    </p>
-
-                </div>
-
-
-
-                {{-- Pediatric Dentistry --}}
-                <div class="group rounded-3xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-3xl transition group-hover:bg-cyan-500">
-                        👧
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black text-slate-900">
-                        طب أسنان الأطفال
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-slate-600">
-                        رعاية لطيفة ومناسبة للأطفال مع الاهتمام
-                        بصحة أسنانهم منذ الصغر.
-                    </p>
-
-                </div>
-
-
-
-                {{-- Veneers --}}
-                <div class="group rounded-3xl bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-3xl transition group-hover:bg-cyan-500">
-                        🌟
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black text-slate-900">
-                        الفينير
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-slate-600">
-                        تحسين شكل الأسنان والابتسامة للحصول
-                        على مظهر أكثر تناسقًا وجمالًا.
-                    </p>
-
-                </div>
-
-
-
-                {{-- Free Consultation --}}
-                <div class="group rounded-3xl bg-cyan-600 p-7 text-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-
-                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-3xl">
-                        💬
-                    </div>
-
-                    <h3 class="mt-6 text-xl font-black">
-                        استشارة مجانية
-                    </h3>
-
-                    <p class="mt-3 leading-7 text-cyan-50">
-                        تواصلي معنا لمعرفة الخدمة الأنسب
-                        لحالتك والحصول على الاستشارة الأولية.
-                    </p>
-
-                    <a
-                        href="#appointment"
-                        class="mt-6 inline-block rounded-full bg-white px-5 py-2.5 text-sm font-bold text-cyan-700"
-                    >
-                        احجزي موعدك
-                    </a>
-
-                </div>
+                <p class="mt-3 leading-7 text-slate-400">
+                    ابتسامة أكثر إشراقًا من خلال تقنيات
+                    تبييض الأسنان المناسبة لحالتك.
+                </p>
 
             </div>
 
+
+
+            {{-- Hollywood Smile --}}
+            <div
+                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            >
+
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                >
+                                        <span class="">
+                                            <img  src="{{ asset('images/teethsmile.jpg') }}"
+                                                alt="د. راما محمد الرمضان"
+                                                    class="rounded-full  h-15 w-15 object-cover"    >
+
+                                            </span>
+                </div>
+
+                <h3 class="mt-6 text-xl font-black text-white">
+                   ابتسامة هوليود
+                </h3>
+
+                <p class="mt-3 leading-7 text-slate-400">
+                    تصميم ابتسامة متناسقة وطبيعية تناسب
+                    ملامح الوجه وشكل الأسنان.
+                </p>
+
+            </div>
+
+
+
+            {{-- Root Canal --}}
+            <div
+                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            >
+
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                >
+
+                                     <span class="">
+                                         <img  src="{{ asset('images/teethlogo2.jpg') }}"
+                                               alt="د. راما محمد الرمضان"
+                                                 class="rounded-full  h-15 w-15 object-cover"    >
+
+                                         </span>
+                </div>
+
+                <h3 class="mt-6 text-xl font-black text-white">
+                    علاج العصب
+                </h3>
+
+                <p class="mt-3 leading-7 text-slate-400">
+                    علاج الأسنان المتضررة والحفاظ عليها
+                    باستخدام تقنيات علاجية حديثة.
+                </p>
+
+            </div>
+
+
+
+            {{-- Cosmetic Fillings --}}
+            <div
+                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            >
+
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                >
+                                     <span class="">
+                                         <img  src="{{ asset('images/teethlogoflour.jpg') }}"
+                                               alt="د. راما محمد الرمضان"
+                                                 class="rounded-full  h-15 w-15 object-cover"    >
+
+                                         </span>
+                </div>
+
+                <h3 class="mt-6 text-xl font-black text-white">
+                    الحشوات التجميلية
+                </h3>
+
+                <p class="mt-3 leading-7 text-slate-400">
+                    حشوات بلون قريب من لون الأسنان
+                    لاستعادة الشكل والوظيفة بطريقة طبيعية.
+                </p>
+
+            </div>
+
+
+
+            {{-- Pediatric Dentistry --}}
+            <div
+                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            >
+
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                >
+                                     <span class="">
+                                         <img  src="{{ asset('images/teeeeeth.jpg') }}"
+                                               alt="د. راما محمد الرمضان"
+                                                 class="rounded-full  h-15 w-15 object-cover"    >
+
+                                         </span>
+                </div>
+
+                <h3 class="mt-6 text-xl font-black text-white">
+                    طب أسنان الأطفال
+                </h3>
+
+                <p class="mt-3 leading-7 text-slate-400">
+                    رعاية لطيفة ومناسبة للأطفال مع الاهتمام
+                    بصحة أسنانهم منذ الصغر.
+                </p>
+
+            </div>
+
+
+
+            {{-- Veneers --}}
+            <div
+                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+            >
+
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                >
+
+                                     <span class="">
+                                         <img  src="{{ asset('images/teethlogo4.jpg') }}"
+                                               alt="د. راما محمد الرمضان"
+                                                 class="rounded-full  h-15 w-15 object-cover"    >
+
+                                         </span>
+                </div>
+
+                <h3 class="mt-6 text-xl font-black text-white">
+                    الفينير
+                </h3>
+
+                <p class="mt-3 leading-7 text-slate-400">
+                    تحسين شكل الأسنان والابتسامة للحصول
+                    على مظهر أكثر تناسقًا وجمالًا.
+                </p>
+
+            </div>
+
+
+
+            {{-- Free Consultation --}}
+            <div
+                class="group rounded-3xl border border-cyan-400/30 bg-cyan-400/10 p-7 text-white shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/50 hover:bg-cyan-400/15"
+            >
+
+                <div
+                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/20 text-3xl"
+                >
+                    💬
+                </div>
+
+                <h3 class="mt-6 text-xl font-black text-white">
+                    استشارة مجانية
+                </h3>
+
+                <p class="mt-3 leading-7 text-cyan-100">
+                    تواصلي معنا لمعرفة الخدمة الأنسب
+                    لحالتك والحصول على الاستشارة الأولية.
+                </p>
+
+                <a
+                    href="#appointment"
+                    class="mt-6 inline-block rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+                >
+                    احجزي موعدك
+                </a>
+
+            </div>
+
+
         </div>
 
-    </section>
+    </div>
 
-
-
+</section>
     {{-- ================= ABOUT DOCTOR ================= --}}
     <section
         id="about"
-        class="bg-white px-6 py-24"
+        class="bg-[#F5F5F5] px-6 py-24"
     >
 
         <div class="mx-auto max-w-7xl">
 
-            <div class="grid items-center gap-16 lg:grid-cols-2">
+            <div class="grid items-center gap-12 md:grid-cols-2 ">
 
 
                 {{-- Doctor Image Placeholder --}}
-                <div class="relative">
+                <div class="relative w-full ">
 
-                    <div class="mx-auto flex aspect-[4/5] max-w-md items-center justify-center rounded-[40px] bg-gradient-to-br from-cyan-50 to-slate-100">
+                    <div class=" ">
 
                         <div class="text-center">
 
-                            <div class="mx-auto flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-lg">
+                            <div class="">
 
                                 <span class="text-6xl">
-                                    <img  src="{{ asset('images/hero3.jpg') }}"
+                                    <img  src="{{ asset('images/boy1.png') }}"
                                           alt="د. راما محمد الرمضان"
-                                                    >
+                                              class=" rounded-full h-auto w-auto object-cover object-center"    >
                                 </span>
 
                             </div>
 
-                            <p class="mt-6 text-xl font-black text-slate-800">
-                                د. راما محمد الرمضان
-                            </p>
-
-                            <p class="mt-2 text-slate-500">
-                                طبيبة أسنان
-                            </p>
 
                         </div>
 
@@ -499,7 +568,7 @@
                 <div>
 
                     <span class="font-bold text-cyan-600">
-                        تعرفي على الطبيبة
+                        تعرف على الطبيبة
                     </span>
 
                     <h2 class="mt-4 text-4xl font-black leading-tight text-slate-900 md:text-5xl">
@@ -510,8 +579,8 @@
                     </h2>
 
                     <p class="mt-7 text-lg leading-9 text-slate-600">
-                        أنا د. راما محمد الرمضان، طبيبة أسنان،
-                        أحرص على تقديم رعاية مريحة وشخصية لكل مريض،
+                        أنا الدكتورة راما محمد الرمضان، طبيبة أسنان，
+                        أحرص على تقديم رعاية مريحة وشخصية لكل مريض，
                         مع الاهتمام بصحة الأسنان وجمال الابتسامة.
                     </p>
 
@@ -534,7 +603,7 @@
                         <div class="rounded-2xl bg-slate-50 p-5">
 
                             <div class="text-3xl font-black text-cyan-600">
-                                +3000
+                                +1000
                             </div>
 
                             <div class="mt-1 text-sm text-slate-500">
@@ -560,7 +629,6 @@
         </div>
 
     </section>
-
 
 
     {{-- ================= APPOINTMENT CTA ================= --}}
