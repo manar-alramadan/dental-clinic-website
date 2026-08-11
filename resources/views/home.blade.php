@@ -32,45 +32,151 @@
 
             </a>
 
+{{-- Desktop Navigation --}}
+<div class="hidden items-center gap-8 lg:flex">
 
-            {{-- Desktop Navigation --}}
-            <div class="hidden items-center gap-8 lg:flex">
+    <a href="#home"
+       class="text-sm font-medium text-white transition hover:text-cyan-200">
+        الرئيسية
+    </a>
 
-                <a href="#home"
-                   class="text-sm font-medium text-white transition hover:text-cyan-200">
-                    الرئيسية
-                </a>
+    <a href="#services"
+       class="text-sm font-medium text-white transition hover:text-cyan-200">
+        خدماتنا
+    </a>
 
-                <a href="#services"
-                   class="text-sm font-medium text-white transition hover:text-cyan-200">
-                    خدماتنا
-                </a>
+    <a href="#about"
+       class="text-sm font-medium text-white transition hover:text-cyan-200">
+        عن الطبيبة
+    </a>
 
-                <a href="#about"
-                   class="text-sm font-medium text-white transition hover:text-cyan-200">
-                    عن الطبيبة
-                </a>
+    <a
+        href="{{ route('before-after') }}"
+        class="inline-flex items-center rounded-full bg-cyan-500 px-7 py-3 font-bold text-white transition hover:bg-cyan-400"
+    >
+        نتائج الحالات
+    </a>
 
-                <a href="#before-after"
-                   class="text-sm font-medium text-white transition hover:text-cyan-200">
-                    قبل وبعد
-                </a>
+    <a href="#testimonials"
+       class="text-sm font-medium text-white transition hover:text-cyan-200">
+        آراء المرضى
+    </a>
 
-                <a href="#testimonials"
-                   class="text-sm font-medium text-white transition hover:text-cyan-200">
-                    آراء المرضى
-                </a>
+    <a
+        href="{{ route('admin.login') }}"
+        class="inline-flex items-center rounded-full bg-cyan-500 px-7 py-3 font-bold text-white transition hover:bg-cyan-400"
+    >
+        Dr. Rama
+    </a>
 
-            </div>
-
-
-            {{-- Appointment --}}
+</div>
+ {{-- Appointment --}}
             <a
                 href="#appointment"
                 class="rounded-full bg-white px-6 py-3 text-sm font-bold text-cyan-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
                 احجز موعدك
             </a>
+
+{{-- Mobile Menu Button --}}
+<button
+    type="button"
+    onclick="toggleMobileMenu()"
+    class="flex h-11 w-11     items-center justify-center rounded-xl border border-white/10 bg-white  text-cyan-700  hover:-translate-y-0.5 hover:bg-cyan-50 lg:hidden"
+    aria-label="فتح القائمة"
+>
+    <svg
+        id="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+    >
+        <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+        />
+    </svg>
+</button>
+
+
+{{-- Mobile Navigation --}}
+<div
+    id="mobile-menu"
+    class="absolute left-4 right-4 top-full z-50 mt-3 hidden overflow-hidden rounded-2xl border border-white/10 bg-slate-950/95 p-4 shadow-2xl backdrop-blur-xl lg:hidden"
+>
+
+    <div class="flex flex-col gap-2">
+
+        <a
+            href="#home"
+            onclick="closeMobileMenu()"
+            class="rounded-xl px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10 hover:text-cyan-200"
+        >
+            الرئيسية
+        </a>
+
+        <a
+            href="#services"
+            onclick="closeMobileMenu()"
+            class="rounded-xl px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10 hover:text-cyan-200"
+        >
+            خدماتنا
+        </a>
+
+        <a
+            href="#about"
+            onclick="closeMobileMenu()"
+            class="rounded-xl px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10 hover:text-cyan-200"
+        >
+            عن الطبيبة
+        </a>
+
+        <a
+            href="{{ route('before-after') }}"
+        class="inline-flex items-center rounded-full bg-cyan-500 px-7 py-3 font-bold text-white transition hover:bg-cyan-400"
+        >
+            نتائج الحالات
+        </a>
+
+        <a
+            href="#testimonials"
+            onclick="closeMobileMenu()"
+            class="rounded-xl px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10 hover:text-cyan-200"
+        >
+            آراء المرضى
+        </a>
+
+        <a
+            href="{{ route('admin.login') }}"
+        class="inline-flex items-center rounded-full bg-cyan-500 px-7 py-3 font-bold text-white transition hover:bg-cyan-400"
+        >
+            Dr. Rama
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+
+        menu.classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+
+        menu.classList.add('hidden');
+    }
+</script>
+
+
 
         </nav>
 
@@ -106,15 +212,17 @@
                 <div class="max-w-2xl">
 
                     {{-- Badge --}}
-                    <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-300/20 bg-white/10 px-5 py-2.5 backdrop-blur">
+                   <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-300/20 bg-white/10 px-5 py-2.5 backdrop-blur">
 
-                        <span class="flex h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+                       <span
+                           class="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.6)] animate-pulse"
+                       ></span>
 
-                        <span class="text-sm font-medium text-cyan-100">
-                            عيادة متخصصة في طب وتجميل الأسنان
-                        </span>
+                       <span class="text-sm font-medium text-cyan-100">
+                           عيادة متخصصة في طب وتجميل الأسنان
+                       </span>
 
-                    </div>
+                   </div>
 
 
                     {{-- Heading --}}
@@ -644,29 +752,30 @@
             </span>
 
             <h2 class="mt-4 text-4xl font-black text-white md:text-5xl">
-                جاهزة لابتسامة أجمل؟
+                جاهز لابتسامة أجمل؟
             </h2>
 
             <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                تواصلي معنا واحجزي موعدك للحصول على الاستشارة
+                تواصل معنا واحجزي موعدك للحصول على الاستشارة
                 والخدمة المناسبة لك.
             </p>
 
             <div class="mt-9 flex flex-wrap justify-center gap-4">
+<a
+    href="tel:+963996725984"
+    class="rounded-full bg-cyan-500 px-8 py-4 font-bold text-white transition hover:bg-cyan-400"
+>
+    📞 اتصل بنا
+</a>
 
-                <a
-                    href="tel:+0000000000"
-                    class="rounded-full bg-cyan-500 px-8 py-4 font-bold text-white transition hover:bg-cyan-400"
-                >
-                    اتصلي بنا
-                </a>
-
-                <a
-                    href="#contact"
-                    class="rounded-full border border-white/20 bg-white/10 px-8 py-4 font-bold text-white transition hover:bg-white/20"
-                >
-                    تواصلي معنا
-                </a>
+<a
+    href="https://wa.me/963996725984"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="rounded-full border border-white/20 bg-white/10 px-8 py-4 font-bold text-white transition hover:bg-white/20"
+>
+    💬 تواصل معنا
+</a>
 
             </div>
 
@@ -689,7 +798,7 @@
                 <div>
 
                     <div class="text-lg font-black">
-                        د. راما محمد الرمضان
+                        الدكتورة راما محمد الرمضان
                     </div>
 
                     <div class="mt-1 text-sm text-slate-400">
@@ -712,4 +821,4 @@
 </div>
 
 @endsection
-```
+
