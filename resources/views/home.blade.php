@@ -398,7 +398,7 @@
             >
 
                 <div
-                    class="flex  items-center justify-center rounded-2xl  text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex  items-center justify-center rounded-2xl  text-3xl transition duration-300 "
                 >
 
                                      <span class="h-16 w-16">
