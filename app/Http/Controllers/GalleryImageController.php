@@ -22,10 +22,13 @@ class GalleryImageController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'images' => 'required|array|min:1',
-            'images.*' => 'required|image|mimes:jpeg,png,jpg,webp|max:5120',
-        ]);
+       $request->validate([
+           'image' => [
+               'image',
+               'mimes:jpg,jpeg,png,webp',
+               'max:5120',
+           ],
+       ]);
 
         foreach ($request->file('images') as $image) {
 

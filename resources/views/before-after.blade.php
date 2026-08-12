@@ -7,15 +7,29 @@
 
 {{-- ================= NAVBAR ================= --}}
 <header class="border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+    <nav class="mx-auto flex max-w-7xl  justify-between px-6 py-5">
+<a href="/" class="flex items-center gap-3">
 
-        <a
-            href="{{ route('home') }}"
-            class="text-xl font-black"
-        >
-            الدكتورة راما محمد الرمضان
-        </a>
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg">
+                    <span class="">
+                        <img  src="{{ asset('images/teethlogo3.jpg') }}"
+                              alt="د. راما محمد الرمضان"
+                                class="rounded-full  h-10 w-10 object-cover"    >
 
+                        </span>
+                </div>
+
+                <div class="leading-tight">
+                    <div class="text-lg font-black text-white">
+                         الدكتورة راما محمد الرمضان
+                    </div>
+
+                    <div class="text-xs text-cyan-100">
+                        طب وتجميل الأسنان
+                    </div>
+                </div>
+
+            </a>
         <a
             href="{{ route('home') }}"
             class="rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-bold text-slate-200 transition hover:bg-white/10"
@@ -621,15 +635,14 @@ class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"  
         </h2>
 
         <p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">
-            احجزي موعدك مع د. راما محمد الرمضان
+            احجز موعدك مع د. راما محمد الرمضان
             واحصلي على الاستشارة المناسبة لاحتياجاتك.
         </p>
-
         <a
-            href="{{ route('home') }}#appointment"
+            href="{{ route('appointments.create') }}"
             class="mt-8 inline-flex rounded-full bg-cyan-500 px-8 py-4 font-bold text-white transition hover:bg-cyan-400"
         >
-            احجزي موعدك
+            احجز موعدك
         </a>
 
     </div>
