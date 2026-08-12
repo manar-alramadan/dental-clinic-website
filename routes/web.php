@@ -5,7 +5,6 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\GalleryImageController;
 use App\Http\Controllers\DentalCaseController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Website
@@ -29,6 +28,19 @@ Route::get('/before-after', [DentalCaseController::class, 'index'])
 
 /*
 |--------------------------------------------------------------------------
+| Appointment
+|--------------------------------------------------------------------------
+|
+| Appointment requests are sent directly to WhatsApp.
+| No appointment data is stored in the database.
+|
+*/
+
+Route::view('/appointments/create', 'appointments.create')
+    ->name('appointments.create');
+
+/*
+|--------------------------------------------------------------------------
 | Admin Authentication
 |--------------------------------------------------------------------------
 */
@@ -43,7 +55,6 @@ Route::post('/admin/logout', [AdminAuthController::class, 'logout'])
     ->name('admin.logout');
 
 
-/*
 /*
 |--------------------------------------------------------------------------
 | Protected Admin Panel
@@ -82,3 +93,4 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         ->name('gallery.destroy');
 
 });
+

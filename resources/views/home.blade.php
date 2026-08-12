@@ -22,7 +22,7 @@
 
                 <div class="leading-tight">
                     <div class="text-lg font-black text-white">
-                        د. راما محمد الرمضان
+                        الدكتورة راما محمد الرمضان
                     </div>
 
                     <div class="text-xs text-cyan-100">
@@ -57,9 +57,9 @@
         نتائج الحالات
     </a>
 
-    <a href="#testimonials"
+    <a href="#appointment"
        class="text-sm font-medium text-white transition hover:text-cyan-200">
-        آراء المرضى
+        اتصل بنا
     </a>
 
     <a
@@ -72,7 +72,7 @@
 </div>
  {{-- Appointment --}}
             <a
-                href="#appointment"
+                href="{{ route('appointments.create') }}"
                 class="rounded-full bg-white px-6 py-3 text-sm font-bold text-cyan-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-50"
             >
                 احجز موعدك
@@ -146,8 +146,7 @@
             href="#testimonials"
             onclick="closeMobileMenu()"
             class="rounded-xl px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10 hover:text-cyan-200"
-        >
-            آراء المرضى
+        >اتصل بنا
         </a>
 
         <a
@@ -187,13 +186,13 @@
     {{-- ================= HERO ================= --}}
 <section
     class="relative overflow-hidden bg-cover bg-center bg-no-repeat"
-    style="background-image: url('{{ asset('images/hero3.jpg') }}');"
+    style="background-image: url('{{ asset('images/hero3.webp') }}');"
 >
 
         {{-- Background --}}
         <div class="absolute inset-0">
 
-            <div class="absolute inset-0 bg-gradient-to-l from-slate-950 via-slate-900/55 to-cyan-950"></div>
+            <div class="absolute inset-0 bg-gradient-to-l from-slate-950 via-slate-700/55 to-cyan-790"></div>
 
             <div class="absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl"></div>
 
@@ -250,12 +249,12 @@
                     {{-- Buttons --}}
                     <div class="mt-9 flex flex-wrap gap-4">
 
-                        <a
-                            href="#appointment"
-                            class="rounded-full bg-cyan-500 px-8 py-4 font-bold text-white shadow-xl shadow-cyan-500/20 transition hover:-translate-y-1 hover:bg-cyan-400"
-                        >
-                            احجز موعدك
-                        </a>
+                       <a
+                           href="{{ route('appointments.create') }}"
+                           class="rounded-full bg-white px-6 py-3 text-sm font-bold text-cyan-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-50"
+                       >
+                           احجز موعدك
+                       </a>
 
                         <a
                             href="#services"
@@ -370,7 +369,7 @@
         {{-- Section Header --}}
         <div class="mx-auto max-w-3xl text-center">
 
-                    <span class="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-bold text-cyan-300">
+                    <span class="inline-flex rounded-full border border-cyan-400/20  px-4 py-2 text-sm font-bold text-cyan-300">
                         خدماتنا
                     </span>
 
@@ -395,14 +394,14 @@
 
             {{-- Cleaning --}}
             <div
-                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                class="group rounded-3xl border border-white/10  p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex  items-center justify-center rounded-2xl  text-3xl transition duration-300 group-hover:bg-cyan-400/20"
                 >
 
-                                     <span class="">
+                                     <span class="h-16 w-16">
                                          <img  src="{{ asset('images/teethlogo.jpg') }}"
                                                alt="د. راما محمد الرمضان"
                                                  class="rounded-full  h-15 w-15 object-cover"    >
@@ -425,14 +424,14 @@
 
             {{-- Whitening --}}
             <div
-                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                class="group rounded-3xl border border-white/10  p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex mx-auto h-14 w-14 items-center justify-center rounded-2xl text-3xl transition duration-300 group-hover:bg-cyan-400/20"
                 >
 
-                                     <span class="">
+                                     <span class="h-16 w-16">
                                          <img  src="{{ asset('images/teeeth.jpg') }}"
                                                alt="د. راما محمد الرمضان"
                                                  class="rounded-full  h-15 w-15 object-cover"    >
@@ -455,11 +454,11 @@
 
             {{-- Hollywood Smile --}}
             <div
-                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                class="group rounded-3xl border border-white/10 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex  mx-auto h-14 w-14  rounded-2xl text-3xl transition duration-300 group-hover:bg-cyan-400/20"
                 >
                                         <span class="">
                                             <img  src="{{ asset('images/teethsmile.jpg') }}"
@@ -484,11 +483,11 @@
 
             {{-- Root Canal --}}
             <div
-                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                class="group rounded-3xl border border-white/10 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex mx-auto h-14 w-14 items-center justify-center rounded-2xl  text-3xl transition duration-300 group-hover:bg-cyan-400/20"
                 >
 
                                      <span class="">
@@ -514,11 +513,11 @@
 
             {{-- Cosmetic Fillings --}}
             <div
-                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                class="group rounded-3xl border border-white/10  p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex  mx-auto  h-14 w-14 items-center justify-center rounded-2xl  text-3xl transition duration-300 group-hover:bg-cyan-400/20"
                 >
                                      <span class="">
                                          <img  src="{{ asset('images/teethlogoflour.jpg') }}"
@@ -543,11 +542,11 @@
 
             {{-- Pediatric Dentistry --}}
             <div
-                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                class="group rounded-3xl border border-white/10 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex mx-auto h-14 w-14 items-center justify-center rounded-2xl  text-3xl transition duration-300 group-hover:bg-cyan-400/20"
                 >
                                      <span class="">
                                          <img  src="{{ asset('images/teeeeeth.jpg') }}"
@@ -572,11 +571,11 @@
 
             {{-- Veneers --}}
             <div
-                class="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
+                class="group rounded-3xl border border-white/10 p-7 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:bg-white/[0.07]"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-3xl transition duration-300 group-hover:bg-cyan-400/20"
+                    class="flex h-14 w-14  mx-auto  items-center justify-center rounded-2xl  text-3xl transition duration-300 group-hover:bg-cyan-400/20"
                 >
 
                                      <span class="">
@@ -602,11 +601,11 @@
 
             {{-- Free Consultation --}}
             <div
-                class="group rounded-3xl border border-cyan-400/30 bg-cyan-400/10 p-7 text-white shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/50 hover:bg-cyan-400/15"
+                class="group rounded-3xl border border-cyan-200/30 p-7 text-white shadow-xl backdrop-blur-xl transition  bg-cyan-400/15 duration-300 hover:-translate-y-2 hover:border-cyan-300/50 hover:bg-cyan-600/15"
             >
 
                 <div
-                    class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/20 text-3xl"
+                    class="flex mx-auto h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/20 text-3xl"
                 >
                     💬
                 </div>
@@ -615,16 +614,16 @@
                     استشارة مجانية
                 </h3>
 
-                <p class="mt-3 leading-7 text-cyan-100">
+                <p class="mt-3 mb-6 leading-7 text-cyan-100">
                     تواصلي معنا لمعرفة الخدمة الأنسب
                     لحالتك والحصول على الاستشارة الأولية.
                 </p>
 
                 <a
-                    href="#appointment"
-                    class="mt-6 inline-block rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
+                    href="{{ route('appointments.create') }}"
+                    class="rounded-full bg-white  px-6 py-3 text-sm font-bold text-cyan-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-cyan-50"
                 >
-                    احجزي موعدك
+                    احجز موعدك
                 </a>
 
             </div>
@@ -656,7 +655,7 @@
                             <div class="">
 
                                 <span class="text-6xl">
-                                    <img  src="{{ asset('images/boy1.png') }}"
+                                    <img  src="{{ asset('images/boy1.webp') }}"
                                           alt="د. راما محمد الرمضان"
                                               class=" rounded-full h-auto w-auto object-cover object-center"    >
                                 </span>
@@ -724,7 +723,7 @@
 
 
                     <a
-                        href="#appointment"
+                        href="{{ route('appointments.create') }}"
                         class="mt-8 inline-flex rounded-full bg-slate-900 px-7 py-4 font-bold text-white transition hover:bg-cyan-600"
                     >
                         احجز موعدك
@@ -774,7 +773,7 @@
     rel="noopener noreferrer"
     class="rounded-full border border-white/20 bg-white/10 px-8 py-4 font-bold text-white transition hover:bg-white/20"
 >
-    💬 تواصل معنا
+     💬 تواصل معنا عبر واتساب
 </a>
 
             </div>

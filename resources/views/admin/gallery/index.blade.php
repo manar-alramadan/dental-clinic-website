@@ -78,9 +78,7 @@
                         {{-- Information --}}
                         <div class="p-5">
 
-                            <h2 class="text-lg font-black">
-                                {{ $image->title ?? 'بدون عنوان' }}
-                            </h2>
+
 
                             @if($image->description)
 
@@ -116,7 +114,6 @@
                                 action="{{ route('admin.gallery.destroy', $image) }}"
                                 method="POST"
                                 class="mt-5"
-                                onsubmit="return confirm('هل أنت متأكد من حذف هذه الصورة؟');"
                             >
 
                                 @csrf
