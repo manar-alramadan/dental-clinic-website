@@ -328,12 +328,29 @@ class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"  
                     onclick="openGallery({{ $loop->index }})"
                     class="group relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5"
                 >
+\@php
+     $imageUrl = $image->image;
 
-                    <img
-                        src="{{ asset('storage/' . $image->image) }}"
-                        alt="{{ $image->title ?? 'نتيجة من نتائج المرضى' }}"
-                        class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                    >
+     if (
+         str_starts_with($imageUrl, 'http://') ||
+         str_starts_with($imageUrl, 'https://')
+     ) {
+         // Cloudinary URL
+         $imageUrl = $image->image;
+     } elseif (str_starts_with($imageUrl, 'images/')) {
+         // Images stored in public/images
+         $imageUrl = asset($image->image);
+     } else {
+         // Legacy images stored in storage/app/public
+         $imageUrl = asset('storage/' . ltrim($image->image, '/'));
+     }
+ @endphp
+
+ <img
+     src="{{ $imageUrl }}"
+     alt="{{ $image->title ?? 'نتيجة من نتائج المرضى' }}"
+     class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+ >
 
                     <div
                         class="absolute inset-0 flex items-center justify-center bg-slate-950/0 transition duration-300 group-hover:bg-slate-950/40"

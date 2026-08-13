@@ -130,17 +130,31 @@
                 <article class="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-xl">
 
                     {{-- Image --}}
-                    <div class="aspect-square overflow-hidden bg-slate-900">
+                  <div class="aspect-square overflow-hidden bg-slate-900">
 
-                        <img
-                            src="{{ $imageUrl }}"
-                            alt="{{ $image->title ?? 'نتيجة من نتائج المرضى' }}"
-                            class="h-full w-full object-cover transition duration-500 hover:scale-105"
-                            loading="lazy"
-                        >
+                      @php
+                          $imageUrl = $image->image;
 
-                    </div>
+                          if (
+                              str_starts_with($imageUrl, 'http://') ||
+                              str_starts_with($imageUrl, 'https://')
+                          ) {
+                              $imageUrl = $image->image;
+                          } elseif (str_starts_with($imageUrl, 'images/')) {
+                              $imageUrl = asset($image->image);
+                          } else {
+                              $imageUrl = asset('storage/' . ltrim($image->image, '/'));
+                          }
+                      @endphp
 
+                      <img
+                          src="{{ $imageUrl }}"
+                          alt="{{ $image->title ?? 'نتيجة من نتائج المرضى' }}"
+                          class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                          loading="lazy"
+                      >
+
+                  </div>
 
                     {{-- Information --}}
                     <div class="p-5">

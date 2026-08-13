@@ -8,8 +8,6 @@ vendor
 .env
 .env.*
 
-public/build
-
 storage/logs/*
 storage/framework/cache/*
 storage/framework/sessions/*
