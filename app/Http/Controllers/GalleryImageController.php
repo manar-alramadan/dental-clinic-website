@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\GalleryImage;
+use Cloudinary\Api\Upload\UploadApi;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class GalleryImageController extends Controller
 {
@@ -22,25 +22,41 @@ class GalleryImageController extends Controller
 
     public function store(Request $request)
     {
-       $request->validate([
-           'image' => [
-               'image',
-               'mimes:jpg,jpeg,png,webp',
-               'max:5120',
-           ],
-       ]);
+        $request->validate([
+            'images' => [
+                'required',
+                'array',
+                'min:1',
+            ],
+
+            'images.*' => [
+                'required',
+                'image',
+                'mimes:jpg,jpeg,png,webp',
+                'max:5120',
+            ],
+        ]);
+
+        $count = 0;
 
         foreach ($request->file('images') as $image) {
 
-            $imagePath = $image->store('gallery', 'public');
+            $upload = (new UploadApi())->upload(
+                $image->getRealPath(),
+                [
+                    'folder' => 'dental-clinic/gallery',
+                    'resource_type' => 'image',
+                ]
+            );
 
             GalleryImage::create([
-                'image' => $imagePath,
+                'image' => $upload['secure_url'],
+                'cloudinary_public_id' => $upload['public_id'],
                 'is_published' => true,
             ]);
-        }
 
-        $count = count($request->file('images'));
+            $count++;
+        }
 
         return redirect()
             ->route('admin.gallery.index')
@@ -52,15 +68,44 @@ class GalleryImageController extends Controller
 
     public function destroy(GalleryImage $galleryImage)
     {
-        if ($galleryImage->image) {
-            Storage::disk('public')->delete($galleryImage->image);
+        /*
+         * الصور الجديدة الموجودة في Cloudinary
+         */
+        if ($galleryImage->cloudinary_public_id) {
+
+            try {
+
+                (new UploadApi())->destroy(
+                    $galleryImage->cloudinary_public_id,
+                    [
+                        'resource_type' => 'image',
+                        'type' => 'upload',
+                        'invalidate' => true,
+                    ]
+                );
+
+            } catch (\Throwable $e) {
+
+                report($e);
+            }
         }
+
+        /*
+         * الصور القديمة المحلية
+         *
+         * إذا لم يكن لها cloudinary_public_id
+         * فهي صورة قديمة مخزنة في storage.
+         *
+         * لا نحاول حذفها من Cloudinary.
+         */
 
         $galleryImage->delete();
 
         return redirect()
             ->route('admin.gallery.index')
-            ->with('success', 'تم حذف الصورة بنجاح.');
+            ->with(
+                'success',
+                'تم حذف الصورة بنجاح.'
+            );
     }
 }
-

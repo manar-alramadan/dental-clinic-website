@@ -12,6 +12,7 @@ class GalleryImage extends Model
     protected $fillable = [
         'image',
         'title',
+        'cloudinary_public_id',
         'description',
         'is_published',
     ];

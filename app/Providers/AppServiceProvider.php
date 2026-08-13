@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Force the application root URL from configuration so generated
+        // asset and route URLs include the correct host and port (useful
+        // when behind a proxy or Docker mapping).
+        $appUrl = config('app.url');
+
+        if ($appUrl) {
+            URL::forceRootUrl($appUrl);
+
+            $parts = parse_url($appUrl);
+            if (!empty($parts['scheme'])) {
+                URL::forceScheme($parts['scheme']);
+            }
+        }
     }
 }
