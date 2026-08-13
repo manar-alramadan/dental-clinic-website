@@ -93,4 +93,3 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
         ->name('gallery.destroy');
 
 });
-
